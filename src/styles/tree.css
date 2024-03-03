@@ -1,0 +1,161 @@
+.tree {
+  --dark: #333;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tree .node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+  position: relative;
+  
+}
+
+.tree .node:not(.node--root) > .node__element::before {
+  content: '';
+  height: 20px;
+  width: 1px;
+  background-color: #ccc9c9;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -20px;
+  margin: auto;
+}
+
+.tree .node.node--left {
+  margin-right: 10px;
+}
+
+.tree .node.node--right {
+  margin-left: 10px;
+}
+
+.tree .node__element {
+  cursor: pointer;
+  border: 1px solid transparent;
+  height: 40px;
+  background-color:#87CEEB;
+  border-radius: 16px;
+  min-width: 60px;
+  max-width: max-content;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+}
+
+.tree .node__bottom-line {
+  height: 20px;
+  width: 1px;
+  background-color: #ccc9c9;
+  /* margin-left: 30px; */
+}
+
+.tree .node__element,
+.tree .node__element::before,
+.tree .node__children,
+.tree .node__bottom-line {
+  transition: all ease 0.2s;
+}
+
+.tree .node__children {
+  display: flex;
+  padding: 20px 0;
+  border-top: 1px solid #ccc9c9;
+}
+
+.tree .node__element:hover {
+  border-color: var(--dark);
+}
+
+.tree .node__element:hover ~ .node__children .node__element::before {
+  width: 2px;
+  background-color: var(--dark);
+}
+
+.tree .node__element:hover ~ .node__bottom-line,
+.tree .node__element:hover ~ .node__children .node__bottom-line {
+  width: 2px;
+  background-color: var(--dark);
+}
+
+.tree .node__element:hover ~ .node__children,
+.tree .node__element:hover ~ .node__children .node__children {
+  border-top-width: 2px;
+  border-color: var(--dark);
+}
+.tree .node__element--end {
+  background-color: #1E90FF /* Change to your desired color */
+}
+.node-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative; /* Ensure the container is positioned relative */
+}
+
+.end-text {
+  font-size: 12px;
+  color: gray;
+  display: inline-block;
+  white-space: nowrap; /* Prevent text from wrapping */
+  margin-right: 5px; /* Adjust spacing between the text and the node */
+  opacity: 0; /* Initially hide the text */
+  transition: opacity 0.3s ease; /* Add transition for smooth appearance */
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 10px); /* Position the text to the left of the node */
+  transform: translateY(-50%);
+}
+
+.node-wrapper:hover .end-text {
+  opacity: 1; /* Show the text on hover */
+}
+
+
+#display-container-id {
+  display: none; /* Initially hide the container */
+  align-items: center;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of elements */
+}
+
+#display-container-id span {
+  cursor: pointer;
+  border: 1px solid transparent;
+  height: 40px;
+  background-color: #87CEEB;
+  border-radius: 16px;
+  min-width: 60px;
+  max-width: max-content;
+  padding: 4px 8px;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+}
+
+#display-container-id span:not(:last-child) {
+  margin-right: 5px; /* Add some spacing between elements */
+}
+
+.bluebutton{
+  background:#1E9BFF;
+  color:white;
+}
+
+.greenbutton{
+  background:#008000;
+  color:white;
+}
+
+.pinkbutton{
+  background-color:#C71585;
+  color:white;
+}
+

@@ -1,0 +1,61 @@
+/* styles.css */
+
+.data-structures-container {
+    width: 90%;
+    padding: 30px;
+    box-sizing: border-box;
+    margin: auto; /* Center the container horizontally */
+    margin-top: -50px;
+    line-height: 2; /* Adjust line spacing as needed */
+
+
+  }
+  .data-structures-table th {
+    text-align: center; /* Horizontal alignment */
+    vertical-align: middle; /* Vertical alignment */
+  }
+
+  
+  .data-structures-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .data-structures-table th, .data-structures-table td {
+    border: 2px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .data-structures-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .heading {
+    font-size: 44px;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .paragraph {
+    font-size: 22px;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  
+  .list {
+    font-size: 22px;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  
+  .table {
+    font-size: 22px;
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+ .thead{
+    justify-content: center;
+    vertical-align: middle;
+}

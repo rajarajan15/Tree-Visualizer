@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous"
+  />
+  <title>TREE-VIZ</title>
+  <link rel="icon" type="image/png" href="icon.png">
+</head>
+  <body>
+    <header class="header-container btn-grop">
+      <button onclick="showSection('homeSection')" class="button">TREE-VIZ</button>
+          <button onclick="showSection('bstSection')" class="button">BINARY SEARCH TREE</button>
+          <button onclick="showSection('avlSection')" class="button">AVL TREE</button>
+          <button onclick="showSection('trieSection')" class="button">TRIE</button>
+          <button onclick="showSection('maxheapSection')" class="button">MAX HEAP</button>
+          <button onclick="showSection('minheapSection')" class="button">MIN HEAP</button>
+    </header>
+    
+    <main>
+    <section id="homeSection" >
+      <div id="root5"></div>
+    </section>
+
+    <section id="bstSection" class="hidden">
+      <div class="buttons-container bst-actions-container">
+      </div>
+      <div class="app-container">
+        <div id="root">
+          <div class="node node--root"></div>
+        </div>
+        <div id="display-container-id">
+          <div class="node node--root"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="avlSection" class="hidden">
+      <div style="display: flex;flex-wrap: wrap;justify-content: center;gap:18px" class="avl-actions-container">
+      </div>
+      <div class="app-container" style="margin-top: 50px;">
+
+        <div class="trees-container">
+        <div id="root1" class="tree avl-tree">
+          <div class="node node--root"></div>
+        </div>
+        <div class="tree avl-tree-clone">
+          <div class="node node--root"></div>
+        </div>
+      </div> 
+      </div>
+    </section>
+
+    <section id="trieSection" class="hidden">
+      <div class="buttons-container trie-actions-container">
+      </div>
+      <div class="app-container">
+        <div id="root2" class="tree">
+          <div class="node node--root"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="maxheapSection" class="hidden">
+      <div class="buttons-container max-heap-actions-container">
+      </div>
+      <div class="app-container">
+        <div id="root3" class="tree heap">
+          <div class="node node--root"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="minheapSection" class="hidden">
+      <div class="buttons-container min-heap-actions-container">
+      </div>
+      <div class="app-container">
+        <div id="root4" class="tree minheap">
+          <div class="node node--root"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <script>
+    function showSection(sectionId) {
+      document.getElementById('homeSection').classList.add('hidden');
+      document.getElementById('bstSection').classList.add('hidden');
+      document.getElementById('avlSection').classList.add('hidden');
+      document.getElementById('trieSection').classList.add('hidden');
+      document.getElementById('maxheapSection').classList.add('hidden');
+      document.getElementById('minheapSection').classList.add('hidden');
+
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+  </script>
+  </body>
+</html>
