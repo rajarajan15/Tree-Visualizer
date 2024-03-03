@@ -88,7 +88,7 @@ class TrieRenderer {
           </button>
         </div>
         <div class="btn-group">
-          <button id="deletetrie" class="btn btn-danger">
+          <button id="deletetrie" class="redbutton btn">
             Delete Tree
           </button>
         </div>

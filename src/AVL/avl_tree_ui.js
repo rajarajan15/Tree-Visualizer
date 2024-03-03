@@ -55,7 +55,7 @@ export default class AVLTreeUI extends BinarySearchTreeUI {
       </button>
     </div>
     <div class="btn-group">
-      <button id="deletetree" class="btn btn-danger">
+      <button id="deletetree" class="redbutton btn">
         Delete Tree
       </button>
     </div>

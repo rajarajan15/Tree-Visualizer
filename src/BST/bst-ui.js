@@ -58,7 +58,7 @@ class BinarySearchTreeUI {
       </button>
     </div>
     <div class="btn-group">
-      <button id="resetBtn" class="btn btn-danger" style="color:white">
+      <button id="resetBtn" class="redbutton btn">
         Delete Tree
       </button>
     </div>

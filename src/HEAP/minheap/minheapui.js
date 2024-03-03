@@ -43,7 +43,7 @@ export const defaultMinHeapUIConfig = {
           <button id="peekBtn" class="pinkbutton btn">Peek</button>
         </div>
         <div class="btn-group">
-          <button id="minresetBtn" class="btn btn-danger">
+          <button id="minresetBtn" class="redbutton btn">
             Delete Heap
           </button>
         </div>

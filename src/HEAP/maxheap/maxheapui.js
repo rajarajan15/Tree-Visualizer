@@ -43,7 +43,7 @@ class MaxHeapUI {
         <button id="maxpeekBtn" class="pinkbutton btn">Peek</button>
       </div>
       <div class="btn-group">
-        <button id="maxresetBtn" class="btn btn-danger">
+        <button id="maxresetBtn" class="redbutton btn">
           Delete Heap
         </button>
       </div>
