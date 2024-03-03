@@ -54,7 +54,7 @@ export const defaultMinHeapUIConfig = {
       const { items } = this.heap;
   
       if (index >= items.length) {
-        return ''; // Return empty string if index exceeds heap size
+        return '';
       }
   
       const currentValue = items[index];
@@ -64,7 +64,6 @@ export const defaultMinHeapUIConfig = {
       const leftChildUI = this.getHeapUI(leftChildIndex);
       const rightChildUI = this.getHeapUI(rightChildIndex);
   
-      // Create HTML for the current node and its children
       const nodeHTML = `
         <div class="node__element heap-node" data-index="${index}">
           ${currentValue}
@@ -89,12 +88,10 @@ export const defaultMinHeapUIConfig = {
     }
   
     renderHeap(containerSelector = this.heapContainerSelector) {
-        console.log("Rendering heap...");
 
       const heapContainer = document.querySelector(containerSelector);
-      if (!heapContainer) return; // Exit if container is not found
+      if (!heapContainer) return; 
   
-      // Render the heap recursively starting from the root
       heapContainer.innerHTML = this.getHeapUI();
     }
   
@@ -129,7 +126,6 @@ export const defaultMinHeapUIConfig = {
         return;
       }
       this.heap.insert(parseInt(element));
-      console.log("Heap after insertion:", this.heap.items); // Log current state of the heap
 
       this.render();
     }
@@ -146,7 +142,6 @@ export const defaultMinHeapUIConfig = {
     onPeekBtnClick() {
       const min = this.heap.peek();
       if (min !== null) {
-        // alert(`Min element: ${min}`);
         this.highlightNode(0);
       } else {
         alert('Heap is empty');
@@ -154,9 +149,7 @@ export const defaultMinHeapUIConfig = {
     }
   
     onResetBtnClick() {
-      console.log("gokullll");
       this.heap.items = [];
-      // this.heap.clear();
       this.render();
     }
   

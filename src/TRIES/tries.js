@@ -11,9 +11,7 @@ class Trie {
     }
 
     insert(word) {
-        // if (!this.root) {
-        //     this.root = new TrieNode(); // Initialize root if it's null
-        // }
+
         let currentnode = this.root;
         for (let i = 0; i < word.length; i++) {
             const char = word[i];
@@ -39,41 +37,31 @@ class Trie {
 
     delete(word) {
         if (!this.search(word)) {
-            console.log(`${word} does not exist in the trie.`);
             return;
         }
-    
         let currentnode = this.root;
-        let stack = []; // Stack to keep track of nodes in the path
+        let stack = [];
     
-        // Traverse to the node corresponding to the last character of the word
         for (let i = 0; i < word.length; i++) {
             stack.push({ node: currentnode, char: word[i] });
             currentnode = currentnode.children[word[i]];
         }
-    
-        // Unmark the end of the word
         currentnode.isEndofword = false;
-    
-        // Check if the node has no children and not end of another word, then delete it
         while (stack.length > 0 && !currentnode.isEndofword && Object.keys(currentnode.children).length === 0) {
             let { node, char } = stack.pop();
             delete node.children[char];
             currentnode = node;
         }
     
-        console.log(`${word} has been deleted from the trie.`);
     }
     
-
-    deleteTree(node = this.root) {
+    deleteTrie(node = this.root) {
         if (!node) {
-            // alert("create a tree ");
             return;
         }
     
         for (let char in node.children) {
-            this.deleteTree(node.children[char]);
+            this.deleteTrie(node.children[char]);
         }
     
         node.children = {};
@@ -164,13 +152,10 @@ class TrieRenderer {
       
 
     onDeleteTrieClick = () => {
-        this.trie.deleteTree();
+        this.trie.deleteTrie();
         this.renderTrie();
     };
     
-    
-    
-
     promptAsync = (promptMessage) => {
         return new Promise(resolve => {
             const userInput = prompt(promptMessage);
@@ -182,7 +167,6 @@ class TrieRenderer {
         const trieContainer = document.querySelector(this.trieContainerSelector);
         trieContainer.innerHTML = this.getTrieUI(this.root);
     
-        // Add line breaks based on common prefixes
         const nodes = trieContainer.querySelectorAll('.node__element');
         let previousParentId = null;
     
@@ -190,7 +174,6 @@ class TrieRenderer {
             const parentId = node.getAttribute('data-parent-id');
     
             if (parentId && parentId !== previousParentId) {
-                // Insert line break after each distinct parent node
                 const lineBreak = document.createElement('br');
                 node.insertAdjacentElement('beforebegin', lineBreak);
                 previousParentId = parentId;

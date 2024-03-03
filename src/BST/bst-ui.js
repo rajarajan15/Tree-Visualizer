@@ -28,9 +28,6 @@ class BinarySearchTreeUI {
       `${this.config.HIGHLIGHT_TIME / 1000}s`
     );
   }
-// blue style="background:#1E9BFF"
-// green style="background-color:#008000"
-//grey style="background-color:#2F4F4F"
 
   template() {
     return `
@@ -90,22 +87,16 @@ class BinarySearchTreeUI {
       return;
     }
   
-    // Display the value during highlighting
     this.displayValue(value);
   
     nodeElement.classList.add(this.config.HIGHLIGHT_CLASS);
-    // document.querySelectorAll('button').forEach((btn) => {
-    //   btn.setAttribute('disabled', true);
-    // });
+
     this.disableAllBtns();
   
     return new Promise((resolve) => {
       this.highlightTimer = setTimeout(() => {
-        this.displayValue(null); // Clear the displayed value after highlighting
+        this.displayValue(null);
         nodeElement.classList.remove(this.config.HIGHLIGHT_CLASS);
-        // document.querySelectorAll('button').forEach((btn) => {
-        //   btn.removeAttribute('disabled');
-        // });
         this.highlightTimer = null;
         resolve();
       }, this.config.HIGHLIGHT_TIME);
@@ -161,7 +152,6 @@ class BinarySearchTreeUI {
       return;
     }
   
-    // Display the value during highlighting
   
     nodeElement.classList.add(this.config.HIGHLIGHT_CLASS);
     document.querySelectorAll('button').forEach((btn) => {
@@ -170,7 +160,7 @@ class BinarySearchTreeUI {
   
     return new Promise((resolve) => {
       this.highlightTimer = setTimeout(() => {
-        this.displayValue(null); // Clear the displayed value after highlighting
+        this.displayValue(null); 
         nodeElement.classList.remove(this.config.HIGHLIGHT_CLASS);
         document.querySelectorAll('button').forEach((btn) => {
           btn.removeAttribute('disabled');
@@ -210,14 +200,12 @@ displayValue(value) {
   const displayContainer = document.getElementById('display-container-id');
   if (displayContainer) {
     if (value !== null) {
-      displayContainer.style.display = 'flex'; // Show the container
+      displayContainer.style.display = 'flex';
       const valueElement = document.createElement('span');
       valueElement.textContent = `${value}`;
 
-      // Check if there is a previous node and if it's not the first one
       const previousNode = displayContainer.querySelector('span:last-child');
       if (previousNode) {
-        // Add arrow if there are more values and it's not the last one
         const arrowTextNode = document.createTextNode(' -> ');
         displayContainer.appendChild(arrowTextNode);
       }
@@ -227,19 +215,6 @@ displayValue(value) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
   onRemoveElementBtnClick() {
     const element = prompt('Enter element to remove from the tree');
@@ -279,7 +254,6 @@ displayValue(value) {
       return;
     }
   
-    // Validate input as integer or float
     if (!/^\d+(\.\d+)?$/.test(element)) {
       alert('Please enter a valid integer or float.');
       return;

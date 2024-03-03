@@ -1,18 +1,16 @@
-/* styles.css */
-
 .data-structures-container {
     width: 90%;
     padding: 30px;
     box-sizing: border-box;
-    margin: auto; /* Center the container horizontally */
+    margin: auto;
     margin-top: -50px;
-    line-height: 2; /* Adjust line spacing as needed */
+    line-height: 2;
 
 
   }
   .data-structures-table th {
-    text-align: center; /* Horizontal alignment */
-    vertical-align: middle; /* Vertical alignment */
+    text-align: center;
+    vertical-align: middle;
   }
 
   

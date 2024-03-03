@@ -54,7 +54,7 @@ class MaxHeapUI {
     const { items } = this.heap;
 
     if (index >= items.length) {
-      return ''; // Return empty string if index exceeds heap size
+      return '';
     }
 
     const currentValue = items[index];
@@ -64,7 +64,6 @@ class MaxHeapUI {
     const leftChildUI = this.getHeapUI(leftChildIndex);
     const rightChildUI = this.getHeapUI(rightChildIndex);
 
-    // Create HTML for the current node and its children
     const nodeHTML = `
       <div class="node__element heap-node" data-index="${index}">
         ${currentValue}
@@ -90,9 +89,8 @@ class MaxHeapUI {
 
   renderHeap(containerSelector = this.heapContainerSelector) {
     const heapContainer = document.querySelector(containerSelector);
-    if (!heapContainer) return; // Exit if container is not found
+    if (!heapContainer) return; 
 
-    // Render the heap recursively starting from the root
     heapContainer.innerHTML = this.getHeapUI();
   }
 
@@ -143,7 +141,6 @@ class MaxHeapUI {
   onPeekBtnClick() {
     const max = this.heap.peek();
     if (max !== null) {
-      // alert(`Max element: ${max}`);
       this.highlightNode(0);
     } else {
       alert('Heap is empty');
@@ -151,7 +148,6 @@ class MaxHeapUI {
   }
 
   onResetBtnClick() {
-    // this.heap.clear();
     this.heap.items = [];
     this.render();
   }

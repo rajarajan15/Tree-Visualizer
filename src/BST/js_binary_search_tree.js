@@ -37,14 +37,6 @@ class BinarySearchTree {
     this.compareFn = compareFn;
   }
 
-  // get root() {
-  //   return this.root;
-  // }
-
-  // set root(newRoot) {
-  //   this.root = newRoot;
-  // }
-
   insert(value) {
     let node = this.root;
     let insertedNode;
@@ -82,7 +74,6 @@ class BinarySearchTree {
   }
 
   remove(value, node) {
-    console.log("superremove");
     node = node ? node : this.search(value);
     if (!node) return null;
   
@@ -118,22 +109,12 @@ class BinarySearchTree {
     }
   
     // Case: Node has both left and right children
-    console.log("passvalue"+node.right.value);
     const minRightLeaf = this.min(node.right);
-    console.log("leftmin"+minRightLeaf.value);
-    // if (minRightLeaf.parent.left === minRightLeaf) {
-    //   minRightLeaf.parent.left = null;
-    // } else {
-    //   minRightLeaf.parent.right = null;
-    // }
+
     const clone = { ...node };
     node.value = minRightLeaf.value;
     this.remove(minRightLeaf.value);
-    // Additional step: Update the parent's child pointer to null
-    // if (minRightLeaf.parent) {
-    //   minRightLeaf.parent.right = null;
-    // }
-  
+
     return clone;
   }
   

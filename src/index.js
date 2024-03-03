@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import '../public/index.css'
 import AVL from './AVLMAIN';
 import reportWebVitals from './reportWebVitals';
 import BSTMAIN from './BSTMAIN';

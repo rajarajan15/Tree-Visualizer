@@ -22,7 +22,6 @@ const COMPARISON = {
     }
   
     insert(value) {
-      console.log("llsmnsndcks");
       this.items.push(value);
       this.bubbleUp(this.items.length - 1);
     }

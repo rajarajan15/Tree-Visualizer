@@ -101,12 +101,10 @@ class AVLTree extends BinarySearchTree {
   remove(value) {
     const removedNode = super.remove(value);
 
-    // If the removed node was the root, update the root
     if (removedNode === this.root) {
         this.root = removedNode ? removedNode.parent : null;
     }
 
-    // Rebalance the tree
     if (removedNode) {
         this.rebalance(removedNode.parent);
     }
