@@ -4,7 +4,7 @@ import './Home.css';
 const Homepage = () => {
   return (
     <>
-      <div className="data-structures-container">
+      <div className="data-structures-container navbar">
         <h1 className="heading">Tree Visualizer</h1>
         <p className="paragraph">Data structure visualization serves as a beacon in the realm of software engineering, illuminating the intricate organization and functionality of complex algorithms.</p>
         <p className="paragraph">Here are some reasons why visualizing data structures is essential:</p>
