@@ -32,6 +32,7 @@ The operations implemented in Tree-viz include,
     
     =>Traversal (inorder,preorder,postorder)
 
+
 => Avl
     
     => Insertion
@@ -40,11 +41,13 @@ The operations implemented in Tree-viz include,
     
     => Balancing
 
+
 => Tries
     
     => Insertion
     
     => Deletion
+
 
 => Heaps
     
