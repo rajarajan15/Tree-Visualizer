@@ -26,7 +26,7 @@ The operations implemented in Tree-viz include,
 
         => Deletion
     
-        => Searchin
+        => Searching
     
         => Max/Min Value
     
