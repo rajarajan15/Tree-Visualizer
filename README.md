@@ -6,13 +6,13 @@ Tree-viz is a visualization web app that focuses on giving a visual representati
 
 The data structures implemented in Tree-viz include
 
-  -Binay Search Tree
+  => Binay Search Tree
 
-  -Avl
+  => Avl
   
-  -Tries
+  => Tries
   
-  -Heaps
+  => Heaps
 
 # Website
 
