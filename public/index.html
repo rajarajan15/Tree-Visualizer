@@ -33,6 +33,10 @@
       font-size: 20px;
       margin-top: 20px;
     }
+
+    .hidden {
+      display: none;
+    }
   </style>
 
 </head>
@@ -47,7 +51,13 @@
   </header>
     
   <main>
-    <section id="homeSection">
+    <div id="tiltMessage">
+      <img src="image.png" alt="phoneImage" class="phoneImage" />
+      <div>Tilt your phone</div>
+      <p>(Switch to portrait mode for the best experience)</p>
+    </div>
+
+    <section id="homeSection" class="hidden">
       <div id="root5"></div>
     </section>
 
@@ -109,10 +119,6 @@
       </div>
     </section>
 
-    <div id="landscapeHint" style="display: none; text-align: center; padding: 20px; background-color: #f8d7da; color: #721c24;">
-  <img src="image.png" alt="Phone Image" style="height: 100px;">
-  <p>Tilt your phone, use landscape mode for the best experience.</p>
-</div>
 
   </main>
 
@@ -127,29 +133,36 @@
   </footer>
 
   <script>
-    function showSection(sectionId) {
-      document.getElementById('homeSection').classList.add('hidden');
-      document.getElementById('bstSection').classList.add('hidden');
-      document.getElementById('avlSection').classList.add('hidden');
-      document.getElementById('trieSection').classList.add('hidden');
-      document.getElementById('maxheapSection').classList.add('hidden');
-      document.getElementById('minheapSection').classList.add('hidden');
+    let lastDisplayedSection = null;
 
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.add('hidden'));
       document.getElementById(sectionId).classList.remove('hidden');
+      lastDisplayedSection = sectionId;
     }
 
-    function handleOrientationChange() {
-      var landscapeHint = document.getElementById('landscapeHint');
-      if (window.matchMedia("(orientation: portrait)").matches) {
-        landscapeHint.style.display = 'block';
+    const tiltMessage = document.getElementById("tiltMessage");
+    const portraitMediaQuery = window.matchMedia("(orientation: portrait)");
+
+    function handleOrientationChange(event) {
+      const sections = document.querySelectorAll('section:not(.hidden)');
+      if (event.matches) {
+        tiltMessage.style.display = "flex";
+        sections.forEach(section => section.classList.add('hidden'));
       } else {
-        landscapeHint.style.display = 'none';
+        tiltMessage.style.display = "none";
+        if (lastDisplayedSection) {
+          const sectionToDisplay = document.getElementById(lastDisplayedSection);
+          sectionToDisplay.classList.remove('hidden');
+        } else {
+          showSection('homeSection'); // Display homeSection if no section is previously displayed
+        }
       }
     }
 
-    window.addEventListener("orientationchange", handleOrientationChange);
-    // Initially, check the orientation when the page loads
-    handleOrientationChange();
+    portraitMediaQuery.addEventListener("change", handleOrientationChange);
+    handleOrientationChange(portraitMediaQuery);
   </script>
 </body>
 </html>
