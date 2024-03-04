@@ -22,43 +22,43 @@ The operations implemented in Tree-viz include,
 
     => BST
 
-    => Insertion
+        => Insertion
 
-    => Deletion
+        => Deletion
     
-    => Searchin
+        => Searchin
     
-    => Max/Min Value
+        => Max/Min Value
     
-    =>Traversal (inorder,preorder,postorder)
+        =>Traversal (inorder,preorder,postorder)
 
 
 
     => Avl
     
-    => Insertion
-    
-    => Deletion
-    
-    => Balancing
+        => Insertion
+        
+        => Deletion
+        
+        => Balancing
 
 
 
     => Tries
     
-    => Insertion
-    
-    => Deletion
+        => Insertion
+        
+        => Deletion
 
 
 
     => Heaps
     
-    => Insertion
-    
-    => Extract Max/Min
-    
-    => Peek
+        => Insertion
+        
+        => Extract Max/Min
+        
+        => Peek
     
 
 # Website
