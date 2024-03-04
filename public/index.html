@@ -12,19 +12,31 @@
   />
   <title>TREE-VIZ</title>
   <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    @media screen and (orientation: portrait) {
+      #landscapeHint {
+        display: block;
+      }
+    }
+    @media screen and (orientation: landscape) {
+      #landscapeHint {
+        display: none;
+      }
+    }
+  </style>
 </head>
-  <body>
-    <header class="header-container btn-grop navbar">
-      <button onclick="showSection('homeSection')" class="button" style="font-size: 38px;">TREE-VIZ</button>
-          <button onclick="showSection('bstSection')" class="button">BINARY SEARCH TREE</button>
-          <button onclick="showSection('avlSection')" class="button">AVL TREE</button>
-          <button onclick="showSection('trieSection')" class="button">TRIE</button>
-          <button onclick="showSection('maxheapSection')" class="button">MAX HEAP</button>
-          <button onclick="showSection('minheapSection')" class="button">MIN HEAP</button>
-    </header>
+<body>
+  <header class="header-container btn-grop navbar">
+    <button onclick="showSection('homeSection')" class="button" style="font-size: 38px;">TREE-VIZ</button>
+    <button onclick="showSection('bstSection')" class="button">BINARY SEARCH TREE</button>
+    <button onclick="showSection('avlSection')" class="button">AVL TREE</button>
+    <button onclick="showSection('trieSection')" class="button">TRIE</button>
+    <button onclick="showSection('maxheapSection')" class="button">MAX HEAP</button>
+    <button onclick="showSection('minheapSection')" class="button">MIN HEAP</button>
+  </header>
     
-    <main>
-    <section id="homeSection" >
+  <main>
+    <section id="homeSection">
       <div id="root5"></div>
     </section>
 
@@ -45,15 +57,14 @@
       <div style="display: flex;flex-wrap: wrap;justify-content: center;gap:18px" class="avl-actions-container">
       </div>
       <div class="app-container" style="margin-top: 50px;">
-
         <div class="trees-container">
-        <div id="root1" class="tree avl-tree">
-          <div class="node node--root"></div>
-        </div>
-        <div class="tree avl-tree-clone">
-          <div class="node node--root"></div>
-        </div>
-      </div> 
+          <div id="root1" class="tree avl-tree">
+            <div class="node node--root"></div>
+          </div>
+          <div class="tree avl-tree-clone">
+            <div class="node node--root"></div>
+          </div>
+        </div> 
       </div>
     </section>
 
@@ -87,9 +98,12 @@
       </div>
     </section>
 
+    <div id="landscapeHint" style="display: none; text-align: center; padding: 20px; background-color: #f8d7da; color: #721c24;">
+      <p>Tilt your phone, use landscape mode for the best experience.</p>
+    </div>
   </main>
 
-    <script>
+  <script>
     function showSection(sectionId) {
       document.getElementById('homeSection').classList.add('hidden');
       document.getElementById('bstSection').classList.add('hidden');
@@ -101,16 +115,24 @@
       document.getElementById(sectionId).classList.remove('hidden');
     }
 
+    window.addEventListener("orientationchange", function() {
+      var landscapeHint = document.getElementById('landscapeHint');
+      if (window.innerHeight > window.innerWidth) {
+        landscapeHint.style.display = 'block';
+      } else {
+        landscapeHint.style.display = 'none';
+      }
+    });
   </script>
+  
   <footer class="text-center text-lg-start" style="background-color: #0d0d0e;">
     <div class="container d-flex justify-content-center py-4">
-        <div>
-            <a href="https://www.linkedin.com/in/gokulkrishnan31" target="_blank" class="text-white" style="text-decoration: none;font-size: 23px;">
-                Developed By
-            </a>
-        </div>
+      <div>
+        <a href="https://www.linkedin.com/in/gokulkrishnan31" target="_blank" class="text-white" style="text-decoration: none;font-size: 23px;">
+          Developed By
+        </a>
+      </div>
     </div>
-</footer>
-  </body>
-  
+  </footer>
+</body>
 </html>
