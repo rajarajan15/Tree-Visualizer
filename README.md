@@ -59,6 +59,8 @@ The operations implemented in Tree-viz include,
         => Extract Max/Min
         
         => Peek
+
+        => Heapify
     
 
 # Website
