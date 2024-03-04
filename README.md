@@ -20,7 +20,7 @@ The data structures implemented in Tree-viz include,
 
 The operations implemented in Tree-viz include,
 
-=> BST
+    => BST
 
     => Insertion
 
@@ -33,7 +33,8 @@ The operations implemented in Tree-viz include,
     =>Traversal (inorder,preorder,postorder)
 
 
-=> Avl
+
+    => Avl
     
     => Insertion
     
@@ -42,14 +43,16 @@ The operations implemented in Tree-viz include,
     => Balancing
 
 
-=> Tries
+
+    => Tries
     
     => Insertion
     
     => Deletion
 
 
-=> Heaps
+
+    => Heaps
     
     => Insertion
     
