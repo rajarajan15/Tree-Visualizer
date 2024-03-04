@@ -30,7 +30,7 @@ The operations implemented in Tree-viz include,
     
         => Max/Min Value
     
-        =>Traversal (inorder,preorder,postorder)
+        =>Traversal (in-order,pre-order,post-order)
 
 
 
