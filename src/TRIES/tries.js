@@ -199,7 +199,7 @@ class TrieRenderer {
         }
     
         return `
-            <div class="node__container node">
+            <div class=" node">
                 <div class="node-wrapper node">
                 <div class="${nodeClass}" data-node-id="${value}">
                     ${value}

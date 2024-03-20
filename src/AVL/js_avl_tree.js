@@ -22,7 +22,7 @@ class AVLTree extends BinarySearchTree {
     return this.getNodeHeight(node.right) - this.getNodeHeight(node.left);
   }
 
-  rotateRight(node) {
+  rotateRight(node) { // left of left
     const left = node.left;
     node.left = left.right;
     left.right = node;
@@ -39,7 +39,7 @@ class AVLTree extends BinarySearchTree {
     return left;
   }
 
-  rotateLeft(node) {
+  rotateLeft(node) { //right of right
     const right = node.right;
     node.right = right.left;
     right.left = node;
@@ -56,12 +56,12 @@ class AVLTree extends BinarySearchTree {
     return right;
   }
 
-  rotateLeftRight(node) {
+  rotateLeftRight(node) { // right of left
     node.left = this.rotateLeft(node.left);
     return this.rotateRight(node);
   }
 
-  rotateRightLeft(node) {
+  rotateRightLeft(node) { // left of right
     node.right = this.rotateRight(node.right);
     return this.rotateLeft(node);
   }
@@ -75,14 +75,12 @@ class AVLTree extends BinarySearchTree {
     const balanceFactor = this.getBalanceFactor(node);
 
     if (balanceFactor < BALANCE_FACTORS.LEFT_HEAVY) {
-        // -2
         if (this.getBalanceFactor(node.left) === BALANCE_FACTORS.LEFT_HEAVY) {
             node = this.rotateRight(node);
         } else {
             node = this.rotateLeftRight(node);
         }
     } else if (balanceFactor > BALANCE_FACTORS.RIGHT_HEAVY) {
-        // +2
         if (this.getBalanceFactor(node.right) === BALANCE_FACTORS.RIGHT_HEAVY) {
             node = this.rotateLeft(node);
         } else {
