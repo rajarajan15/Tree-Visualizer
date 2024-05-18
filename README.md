@@ -63,6 +63,3 @@ The operations implemented in Tree-viz include,
         => Heapify
     
 
-# Website
-
-Check out the Tree-viz application : https://tree-viz.netlify.app
